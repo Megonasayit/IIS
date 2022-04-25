@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0070)https://www.fit.vutbr.cz/study/courses/IIS/private/projekt/doc.html.cs -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Projekt IIS</title>
+    <style type="text/css">
+    	table { border-collapse: collapse; }
+    	td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    	dt { font-weight: bold; margin-top: 0.5em; }
+    </style>
+</head>
+<body>
+
+<!-- Zkontrolujte pros�m nastaven� k�dov�n� v hlavi�ce dokumentu 
+     podle pou�it�ho editoru -->
+
+<h1>Aukce: prodej a nákup zboží a majetku prostřednictvím dražby</h1> <!-- Nahradte n�zvem sv�ho zad�n� -->
+
+<dl>
+	<dt>Autori</dt>
+	<dd>František Sabol <!-- Nahra�te skute�n�m jm�nem a e-mailem autora a popisem �innosti -->
+	    <a href="mailto:xsabol03@stud.fit.vutbr.cz">xsabol03@stud.fit.vutbr.cz</a> -
+		Tvorba a správa užívateľov, zakúpenie domény , návrh databázy, registrácia a potvrdzovanie účastníkov aukcií.
+	</dd>
+	<dd>Matúš Bičanovský <!-- Nahra�te skute�n�m jm�nem a e-mailem autora a popisem �innosti -->
+	    <a href="mailto:xbican03@stud.fit.vutbr.cz">xbican03@stud.fit.vutbr.cz</a> - 
+		Tvorba frontendu a html šablón, css úprava , úprava užívateľských dát.
+	</dd>
+  <dd>Richard Hrmo <!-- Nahra�te skute�n�m jm�nem a e-mailem autora a popisem �innosti -->
+	    <a href="mailto:xhrmor00@stud.fit.vutbr.cz">xhrmor00@stud.fit.vutbr.cz</a> - 
+		Tvorba a správa aukcií, implementácia databázy, prihadzovanie na aukcie.
+	</dd>
+	<dt>URL aplikace</dt>
+	<dd><a href="https://najlepsiaponuka.xyz">https://najlepsiaponuka.xyz</a></dd>
+	
+</dl>
+
+<h2>Užívatelia systému pre testovanie</h2>
+<p>Heslo admina je také z dôvodu aby sa nám tam niekto nechcený neprihlásil kedže v dobe odovzdania sme mali cez 300 unikátnych navštívení stránky</p>
+<table>
+<tbody><tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+<tr><td>admin@najlepsiaponuka.xyz</td><td>adminxbican03</td><td>Administrátor</td></tr>
+<tr><td>licitator@najlepsiaponuka.xyz</td><td>licitator123</td><td>Licitátor</td></tr>
+<tr><td>user@najlepsiaponuka.xyz</td><td>user123</td><td>Užívateľ</td></tr>
+</tbody></table>
+
+<h2>Implementace</h2>
+<p>Nami vytvorený informačný systém je implementovaný v jazyku Python(verzia 3.8.0) s použitím frameworku Flask(verzia 2.0.2).
+	V našej implementácii používame návrhový vzor Mode-View-Controler.
+	<h4>Model</h4>
+	Modely využívame na zapúzdrovanie reálnych údajov, ako sú užívatelia a informácie o nich, aukcie a potrebné dáta k nim. Modely sú implementované v models.py súbore.
+	<h4>View</h4>
+	Jedná sa o html šablóny realizujúce frontendovú časť informačného systému , spoločne s css súborom na ich dekoráciu , sú uložené v zložke /templates.
+	Tieto html šablóny obsahujú aj možnosti frameworku Flask kde sa v html kóde nachádzaju príkazy na dinamické generovanie obsahu rovnako ako získavanie konkrétnych dát z databázy.
+	<h4>Controler</h4>
+	Je implementovaný v koreňovom adresári v zložkách s príponou .py , primárne riadenie celého informačného systému je implementované v app.py , ktoré sa stará o zobrazovanie všetkých dát a informácii užívateľovi.
+</p>
+
+<h3>Databáze</h3>
+<img src="database.png">
+
+
+<h2>Inštalácia</h2>
+
+
+<ul>
+<li>Archív je potrebné rozbaliť do cieľovej zložky. Nainštalovať potrebné knižnice a balíky v prostredí spúštania aplikácie.</li>
+<li>Softwarové požiadavky : knižnice pomocou (pip install -r requirements.txt), verzia Python 3.8. MySQL databáza.</li>
+<li>Pred spustením aplikácie je potrebné nakonfigurovať databázu. A to odkomentovaním riadku(číslo 21), príkazu setup_db() v súbore run.py, ktorý je potrebné spustiť v cieľovom adresári.</li>
+<li>Spustenie aplikácie: Odkomentovanie riadku(číslo 22) v súbore run.py a spustením tohto súboru v cieľovom adresári.</li>
+</ul>
+
+
+</body></html>
